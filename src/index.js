@@ -33,7 +33,14 @@ function Record(defaultProps, name) {
         RecordTypePrototype;
 
 
+    freeze(defaultProps);
+
+
     function RecordType(value) {
+        if (!(this instanceof RecordType)) {
+            throw new Error(defaultName + "() must be called with new");
+        }
+
         if (value === LOCAL_INTERNAL_CREATE) {
             return this;
         } else {
