@@ -244,7 +244,7 @@ tape("Record map(callback[, thisArg])", function(assert) {
             a: "a",
             b: "b"
         }).map(function(value, key) {
-            return [key, value + key];
+            return value + key;
         }).toArray(), ["a", "aa", "b", "bb"]
     );
     assert.end();
