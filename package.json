@@ -1,5 +1,5 @@
 {
-  "name": "immutable-record",
+  "name": "@nathanfaucett/immutable-record",
   "version": "0.0.1",
   "description": "immutable persistent record for the browser and node.js",
   "repository": {
@@ -22,19 +22,19 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-jsbeautifier": "^0.2.10",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-jsbeautifier": "^0.2.13",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.2",
     "zuul": "^3.7.2"
   },
   "dependencies": {
-    "define_property": "git://github.com/nathanfaucett/define_property.git",
-    "freeze": "git://github.com/nathanfaucett/freeze.git",
-    "has": "git://github.com/nathanfaucett/has.git",
-    "immutable-hash_map": "git://github.com/nathanfaucett/immutable-hash_map.git",
-    "inherits": "git://github.com/nathanfaucett/inherits.git",
-    "keys": "git://github.com/nathanfaucett/keys.git"
+    "@nathanfaucett/define_property": "^0.0.1",
+    "@nathanfaucett/freeze": "^0.0.1",
+    "@nathanfaucett/has": "^0.0.1",
+    "@nathanfaucett/immutable-hash_map": "^0.0.1",
+    "@nathanfaucett/inherits": "^0.0.1",
+    "@nathanfaucett/keys": "^0.0.1"
   }
 }

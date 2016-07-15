@@ -5,12 +5,12 @@ immutable persistent record for the browser and node.js
 
 # Install
 ```bash
-$ npm install git://github.com/nathanfaucett/immutable-record --save
+$ npm install @nathanfaucett/immutable-record --save
 ```
 
 # Usage
 ```javascript
-var ImmutableRecord = require("immutable-record");
+var ImmutableRecord = require("@nathanfaucett/immutable-record");
 
 
 var User = ImmutableRecord({

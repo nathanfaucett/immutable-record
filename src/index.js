@@ -1,9 +1,9 @@
-var ImmutableHashMap = require("immutable-hash_map"),
-    defineProperty = require("define_property"),
-    inherits = require("inherits"),
-    keys = require("keys"),
-    has = require("has"),
-    freeze = require("freeze");
+var ImmutableHashMap = require("@nathanfaucett/immutable-hash_map"),
+    defineProperty = require("@nathanfaucett/define_property"),
+    inherits = require("@nathanfaucett/inherits"),
+    keys = require("@nathanfaucett/keys"),
+    has = require("@nathanfaucett/has"),
+    freeze = require("@nathanfaucett/freeze");
 
 
 var INTERNAL_CREATE = {},
