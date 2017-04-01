@@ -20,7 +20,7 @@ tape("Record() should create new Record from passed arguments", function(assert)
 
     assert.equal(instanceTest0 instanceof Record, true);
     assert.equal(instanceTest1 instanceof Record, true);
-    assert.equal(Test1.__name, "Test1");
+    assert.equal(Test1._name, "Test1");
 
     assert.end();
 });
@@ -316,5 +316,28 @@ tape("Record toString() should return toString representation of Record", functi
         a: 0,
         b: 1
     })).toString(), "TestRecord {a: 0, b: 1}");
+    assert.end();
+});
+
+tape("Record toJSON() should return json representation of Record", function(assert) {
+    var record = TestRecord.fromObject({
+        a: 0,
+        b: 1
+    });
+    assert.deepEquals(record.toJSON(), {
+        a: 0,
+        b: 1
+    });
+    assert.end();
+});
+
+tape("Record fromJSON() should create Record from json", function(assert) {
+    assert.deepEquals(TestRecord.fromJSON({
+        a: 0,
+        b: 1
+    }).toObject(), {
+        a: 0,
+        b: 1
+    });
     assert.end();
 });

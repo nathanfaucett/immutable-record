@@ -42,9 +42,9 @@ function Record(defaultProps, name) {
             return this;
         } else {
             if (value) {
-                this.__map = ImmutableHashMap.of(Record_createProps(defaultProps, value, defaultKeys));
+                this._map = ImmutableHashMap.of(Record_createProps(defaultProps, value, defaultKeys));
             } else {
-                this.__map = EMPTY_MAP;
+                this._map = EMPTY_MAP;
             }
             return freeze(this);
         }
@@ -56,9 +56,14 @@ function Record(defaultProps, name) {
 
     RecordType.EMPTY = freeze(new RecordType());
 
-    RecordType.name = RecordType.__name = RecordTypePrototype.name = defaultName;
-    RecordTypePrototype.__keys = defaultKeys;
-    RecordTypePrototype.__defaultProps = defaultProps;
+    RecordType.name = RecordType._name = RecordTypePrototype.name = defaultName;
+    RecordTypePrototype._keys = defaultKeys;
+    RecordTypePrototype._defaultProps = defaultProps;
+
+    RecordType.fromObject = function(object) {
+        return new RecordType(object);
+    };
+    RecordType.fromJSON = RecordType.fromObject;
 
     function isRecordType(value) {
         return !!(value && value[IS_RECORD_TYPE]);
@@ -96,20 +101,20 @@ defineProperty(RecordPrototype, IS_RECORD, {
 });
 
 RecordPrototype.has = function(key) {
-    return has(this.__defaultProps, key);
+    return has(this._defaultProps, key);
 };
 
 RecordPrototype.get = function(key, notSetValue) {
-    return this.__map.get(key, notSetValue);
+    return this._map.get(key, notSetValue);
 };
 
 RecordPrototype.set = function(key, value) {
     var map, newMap;
 
-    if (!has(this.__defaultProps, key)) {
+    if (!has(this._defaultProps, key)) {
         throw new Error("Cannot set unknown key \"" + key + "\" on " + this.name);
     } else {
-        map = this.__map;
+        map = this._map;
         newMap = map.set(key, value);
 
         if (newMap !== map) {
@@ -123,10 +128,10 @@ RecordPrototype.set = function(key, value) {
 RecordPrototype.remove = function(key) {
     var map, newMap;
 
-    if (!has(this.__defaultProps, key)) {
+    if (!has(this._defaultProps, key)) {
         throw new Error("Cannot remove unknown key \"" + key + "\" from " + this.name);
     } else {
-        map = this.__map;
+        map = this._map;
         newMap = map.remove(key);
 
         if (newMap !== map) {
@@ -138,7 +143,7 @@ RecordPrototype.remove = function(key) {
 };
 
 RecordPrototype.join = function(separator, keyValueSeparator) {
-    return this.__map.join(separator, keyValueSeparator);
+    return this._map.join(separator, keyValueSeparator);
 };
 
 RecordPrototype.toString = function() {
@@ -146,7 +151,7 @@ RecordPrototype.toString = function() {
 };
 
 Record.equal = function(a, b) {
-    return ImmutableHashMap.equal(a.__map, b.__map);
+    return ImmutableHashMap.equal(a._map, b._map);
 };
 
 RecordPrototype.equal = function(other) {
@@ -163,8 +168,8 @@ function RecordIterator(next) {
 }
 
 function Record_iterator(_this) {
-    var map = _this.__map;
-    keys = _this.__keys,
+    var map = _this._map;
+    keys = _this._keys,
         index = 0,
         length = keys.length;
 
@@ -182,8 +187,8 @@ function Record_iterator(_this) {
 }
 
 function Record_iteratorReverse(_this) {
-    var map = _this.__map;
-    keys = _this.__keys,
+    var map = _this._map;
+    keys = _this._keys,
         index = keys.length;
 
     return new RecordIterator(function next() {
@@ -212,48 +217,50 @@ if (ITERATOR_SYMBOL) {
 }
 
 RecordPrototype.every = function(callback, thisArg) {
-    return this.__map.every(callback, thisArg);
+    return this._map.every(callback, thisArg);
 };
 
 RecordPrototype.filter = function(callback, thisArg) {
-    return Record_createRecord(this, this.__map.filter(callback, thisArg));
+    return Record_createRecord(this, this._map.filter(callback, thisArg));
 };
 
 RecordPrototype.forEach = function(callback, thisArg) {
-    this.__map.forEach(callback, thisArg);
+    this._map.forEach(callback, thisArg);
     return this;
 };
 RecordPrototype.each = RecordPrototype.forEach;
 
 RecordPrototype.forEachRight = function(callback, thisArg) {
-    this.__map.forEachRight(callback, thisArg);
+    this._map.forEachRight(callback, thisArg);
     return this;
 };
 RecordPrototype.eachRight = RecordPrototype.forEachRight;
 
 RecordPrototype.map = function(callback, thisArg) {
-    return Record_createRecord(this, this.__map.map(callback, thisArg));
+    return Record_createRecord(this, this._map.map(callback, thisArg));
 };
 RecordPrototype.reduce = function(callback, initialValue, thisArg) {
-    return this.__map.reduce(callback, initialValue, thisArg);
+    return this._map.reduce(callback, initialValue, thisArg);
 };
 RecordPrototype.reduceRight = function(callback, initialValue, thisArg) {
-    return this.__map.reduceRight(callback, initialValue, thisArg);
+    return this._map.reduceRight(callback, initialValue, thisArg);
 };
 RecordPrototype.some = function(callback, thisArg) {
-    return this.__map.some(callback, thisArg);
+    return this._map.some(callback, thisArg);
 };
 
 RecordPrototype.toArray = function() {
-    return this.__map.toArray();
+    return this._map.toArray();
 };
 RecordPrototype.toObject = function() {
-    return this.__map.toObject();
+    return this._map.toObject();
 };
+
+RecordPrototype.toJSON = RecordPrototype.toObject;
 
 function Record_createRecord(_this, map) {
     var record = new _this.constructor(INTERNAL_CREATE);
-    record.__map = map;
+    record._map = map;
     return freeze(record);
 }
 
