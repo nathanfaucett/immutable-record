@@ -171,9 +171,9 @@
     "@nathanfaucett/string-hash_code" "^0.0.1"
     "@nathanfaucett/weak_map_polyfill" "^0.0.2"
 
-"@nathanfaucett/immutable-hash_map@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/immutable-hash_map/-/immutable-hash_map-0.0.3.tgz#71591601e972047ecd267131a4512823f0ee938d"
+"@nathanfaucett/immutable-hash_map@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/immutable-hash_map/-/immutable-hash_map-0.0.5.tgz#fb18bd0e2e4ff4e15ef9010be18233b6c2672f16"
   dependencies:
     "@nathanfaucett/array_copy" "^0.0.1"
     "@nathanfaucett/bit_count" "^0.0.2"

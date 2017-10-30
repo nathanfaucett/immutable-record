@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/immutable-record",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "immutable persistent record for the browser and node.js",
   "repository": {
     "type": "git",
@@ -22,12 +22,12 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "benchmark": "^2.1.4",
     "@nathanfaucett/task": "^0.0.8",
+    "benchmark": "^2.1.4",
     "gulp-jsbeautifier": "^2.1.0",
     "gulp-jshint": "^2.0.4",
-    "jshint": "^2.9.4",
     "immutable": "^3.8.1",
+    "jshint": "^2.9.4",
     "mori": "^0.3.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",
@@ -37,8 +37,9 @@
     "@nathanfaucett/define_property": "^0.0.3",
     "@nathanfaucett/freeze": "^0.0.1",
     "@nathanfaucett/has": "^0.0.2",
-    "@nathanfaucett/immutable-hash_map": "^0.0.3",
+    "@nathanfaucett/immutable-hash_map": "^0.0.5",
     "@nathanfaucett/inherits": "^0.0.3",
+    "@nathanfaucett/is_string": "^0.0.1",
     "@nathanfaucett/keys": "^0.0.2"
   }
 }

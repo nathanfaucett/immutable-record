@@ -3,6 +3,7 @@ var ImmutableHashMap = require("@nathanfaucett/immutable-hash_map"),
     inherits = require("@nathanfaucett/inherits"),
     keys = require("@nathanfaucett/keys"),
     has = require("@nathanfaucett/has"),
+    isString = require("@nathanfaucett/is_string"),
     freeze = require("@nathanfaucett/freeze");
 
 
@@ -28,7 +29,7 @@ function Record(defaultProps, name) {
         LOCAL_INTERNAL_CREATE = INTERNAL_CREATE,
         EMPTY_MAP = ImmutableHashMap.of(defaultProps),
 
-        IS_RECORD_TYPE = "__ImmutableRecord-" + defaultName + "__",
+        IS_RECORD_TYPE = "__ImmutableRecord-" + id + "__",
 
         RecordTypePrototype;
 
@@ -68,8 +69,9 @@ function Record(defaultProps, name) {
     function isRecordType(value) {
         return !!(value && value[IS_RECORD_TYPE]);
     }
-    RecordType["is" + name] = isRecordType;
-
+    if (isString(name)) {
+        RecordType["is" + name] = isRecordType;
+    }
     defineProperty(RecordTypePrototype, IS_RECORD, {
         configurable: false,
         enumerable: false,
@@ -99,6 +101,16 @@ defineProperty(RecordPrototype, IS_RECORD, {
     writable: false,
     value: true
 });
+
+RecordPrototype.size = function() {
+    return this._map._size;
+};
+
+if (defineProperty.hasGettersSetters) {
+    defineProperty(RecordPrototype, "length", {
+        get: RecordPrototype.size
+    });
+}
 
 RecordPrototype.has = function(key) {
     return has(this._defaultProps, key);
