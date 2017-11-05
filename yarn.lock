@@ -12,7 +12,7 @@
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/array-for_each/-/array-for_each-0.0.1.tgz#9f61f919164bce4e8a53bd5a06d7bd27dc42839e"
 
-"@nathanfaucett/array_copy@^0.0.1":
+"@nathanfaucett/array_copy@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/array_copy/-/array_copy-0.0.1.tgz#d3f337840331578fb2096a693291a3109bcd8ac3"
   dependencies:
@@ -29,13 +29,9 @@
     "@nathanfaucett/once" "^0.0.1"
     stream-exhaust "^1.0.1"
 
-"@nathanfaucett/bit_count@^0.0.2":
+"@nathanfaucett/bit_count@0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/bit_count/-/bit_count-0.0.2.tgz#0ea425486f912ba7cda86732f8dfbb83edd90331"
-
-"@nathanfaucett/boolean-hash_code@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/boolean-hash_code/-/boolean-hash_code-0.0.1.tgz#cd3a790cc39a1956b4a34fa32489d7bc7ee8748c"
 
 "@nathanfaucett/clamp@0.0.1", "@nathanfaucett/clamp@^0.0.1":
   version "0.0.1"
@@ -57,21 +53,21 @@
     "@nathanfaucett/has" "^0.0.2"
     "@nathanfaucett/is_primitive" "^0.0.2"
 
-"@nathanfaucett/define_property@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/define_property/-/define_property-0.0.2.tgz#69a59f581c5071be48565fda1070de5f31f0e783"
+"@nathanfaucett/define_property@0.0.3", "@nathanfaucett/define_property@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/define_property/-/define_property-0.0.3.tgz#561f3e77f57f99bedeb152d2eaf62ab1ff09c185"
   dependencies:
-    "@nathanfaucett/has" "^0.0.1"
+    "@nathanfaucett/has" "^0.0.2"
     "@nathanfaucett/is_function" "^0.0.1"
     "@nathanfaucett/is_native" "^0.0.2"
     "@nathanfaucett/is_object" "^0.0.1"
     "@nathanfaucett/is_primitive" "^0.0.2"
 
-"@nathanfaucett/define_property@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/define_property/-/define_property-0.0.3.tgz#561f3e77f57f99bedeb152d2eaf62ab1ff09c185"
+"@nathanfaucett/define_property@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/define_property/-/define_property-0.0.2.tgz#69a59f581c5071be48565fda1070de5f31f0e783"
   dependencies:
-    "@nathanfaucett/has" "^0.0.2"
+    "@nathanfaucett/has" "^0.0.1"
     "@nathanfaucett/is_function" "^0.0.1"
     "@nathanfaucett/is_native" "^0.0.2"
     "@nathanfaucett/is_object" "^0.0.1"
@@ -113,7 +109,7 @@
     "@nathanfaucett/is_native" "^0.0.2"
     "@nathanfaucett/keys" "^0.0.1"
 
-"@nathanfaucett/fast_bind_this@^0.0.1":
+"@nathanfaucett/fast_bind_this@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/fast_bind_this/-/fast_bind_this-0.0.1.tgz#fd2a85590e2a506887513c4b92e06f0c2156ba58"
   dependencies:
@@ -126,7 +122,15 @@
     "@nathanfaucett/clamp" "0.0.1"
     "@nathanfaucett/is_number" "0.0.1"
 
-"@nathanfaucett/freeze@^0.0.1":
+"@nathanfaucett/file_path@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/file_path/-/file_path-0.0.4.tgz#bc462c64218d6b51137e7d3b61c4aa6b3f7526a6"
+  dependencies:
+    "@nathanfaucett/define_property" "^0.0.3"
+    "@nathanfaucett/is_string" "^0.0.1"
+    "@nathanfaucett/path_utils" "^0.0.1"
+
+"@nathanfaucett/freeze@0.0.1", "@nathanfaucett/freeze@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/freeze/-/freeze-0.0.1.tgz#d93cc21ab0cc56612961e298a0316bc76e6c80f9"
   dependencies:
@@ -141,6 +145,14 @@
     "@nathanfaucett/is_null_or_undefined" "0.0.1"
     "@nathanfaucett/is_object" "0.0.1"
 
+"@nathanfaucett/has@0.0.2", "@nathanfaucett/has@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/has/-/has-0.0.2.tgz#0a950f507fc88d57abf0e563a41698890d0e69fe"
+  dependencies:
+    "@nathanfaucett/get_prototype_of" "^0.0.1"
+    "@nathanfaucett/is_native" "^0.0.2"
+    "@nathanfaucett/is_null_or_undefined" "^0.0.1"
+
 "@nathanfaucett/has@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/has/-/has-0.0.1.tgz#3fd94fab029db30edb1284df2d736affc483918c"
@@ -149,51 +161,38 @@
     "@nathanfaucett/is_native" "0.0.2"
     "@nathanfaucett/is_null_or_undefined" "0.0.1"
 
-"@nathanfaucett/has@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/has/-/has-0.0.2.tgz#0a950f507fc88d57abf0e563a41698890d0e69fe"
+"@nathanfaucett/hash_code@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/hash_code/-/hash_code-0.0.3.tgz#d7bf2b9ae1360c455b3561366e3fa370d3e2f120"
   dependencies:
-    "@nathanfaucett/get_prototype_of" "^0.0.1"
-    "@nathanfaucett/is_native" "^0.0.2"
-    "@nathanfaucett/is_null_or_undefined" "^0.0.1"
-
-"@nathanfaucett/hash_code@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/hash_code/-/hash_code-0.0.2.tgz#2085c31b2646b6e95e4583062482758310c2c710"
-  dependencies:
-    "@nathanfaucett/boolean-hash_code" "^0.0.1"
-    "@nathanfaucett/is_boolean" "^0.0.1"
     "@nathanfaucett/is_function" "^0.0.1"
-    "@nathanfaucett/is_null_or_undefined" "^0.0.1"
     "@nathanfaucett/is_number" "^0.0.1"
+    "@nathanfaucett/is_object" "^0.0.1"
     "@nathanfaucett/is_string" "^0.0.1"
-    "@nathanfaucett/number-hash_code" "^0.0.1"
-    "@nathanfaucett/string-hash_code" "^0.0.1"
+    "@nathanfaucett/number-hash_code" "^0.0.2"
+    "@nathanfaucett/string-hash_code" "^0.0.2"
     "@nathanfaucett/weak_map_polyfill" "^0.0.2"
 
-"@nathanfaucett/immutable-hash_map@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/immutable-hash_map/-/immutable-hash_map-0.0.5.tgz#fb18bd0e2e4ff4e15ef9010be18233b6c2672f16"
+"@nathanfaucett/immutable-hash_map@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/immutable-hash_map/-/immutable-hash_map-0.0.6.tgz#53665c74ac61895dc1269589a6e99a5c8c4eabd2"
   dependencies:
-    "@nathanfaucett/array_copy" "^0.0.1"
-    "@nathanfaucett/bit_count" "^0.0.2"
-    "@nathanfaucett/define_property" "^0.0.3"
-    "@nathanfaucett/fast_bind_this" "^0.0.1"
-    "@nathanfaucett/fast_slice" "^0.0.1"
-    "@nathanfaucett/freeze" "^0.0.1"
-    "@nathanfaucett/has" "^0.0.2"
-    "@nathanfaucett/hash_code" "^0.0.2"
-    "@nathanfaucett/inherits" "^0.0.3"
-    "@nathanfaucett/is_array_like" "^0.0.2"
-    "@nathanfaucett/is_equal" "^0.0.1"
-    "@nathanfaucett/is_native" "^0.0.2"
-    "@nathanfaucett/is_null" "^0.0.1"
-    "@nathanfaucett/is_null_or_undefined" "^0.0.1"
-    "@nathanfaucett/is_object" "^0.0.1"
-    "@nathanfaucett/is_undefined" "^0.0.1"
-    "@nathanfaucett/iterator" "^0.0.2"
+    "@nathanfaucett/array_copy" "0.0.1"
+    "@nathanfaucett/bit_count" "0.0.2"
+    "@nathanfaucett/define_property" "0.0.3"
+    "@nathanfaucett/fast_bind_this" "0.0.1"
+    "@nathanfaucett/freeze" "0.0.1"
+    "@nathanfaucett/has" "0.0.2"
+    "@nathanfaucett/hash_code" "0.0.3"
+    "@nathanfaucett/inherits" "0.0.3"
+    "@nathanfaucett/is_array_like" "0.0.2"
+    "@nathanfaucett/is_equal" "0.0.1"
+    "@nathanfaucett/is_null" "0.0.1"
+    "@nathanfaucett/is_null_or_undefined" "0.0.1"
+    "@nathanfaucett/is_object" "0.0.1"
+    "@nathanfaucett/iterator" "0.0.2"
 
-"@nathanfaucett/inherits@^0.0.3":
+"@nathanfaucett/inherits@0.0.3", "@nathanfaucett/inherits@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/inherits/-/inherits-0.0.3.tgz#40449d03c353077a189d47a60345567b94d9e6fe"
   dependencies:
@@ -210,7 +209,7 @@
     "@nathanfaucett/is_native" "^0.0.2"
     "@nathanfaucett/is_object" "^0.0.1"
 
-"@nathanfaucett/is_array_like@^0.0.2":
+"@nathanfaucett/is_array_like@0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/is_array_like/-/is_array_like-0.0.2.tgz#5ca34f5587fd865d5f2b881e03039df5bd4b88e3"
   dependencies:
@@ -218,11 +217,7 @@
     "@nathanfaucett/is_length" "0.0.1"
     "@nathanfaucett/is_object" "0.0.1"
 
-"@nathanfaucett/is_boolean@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/is_boolean/-/is_boolean-0.0.1.tgz#69fa9345ba53f52df0d9a9008edeabe10b8d61b0"
-
-"@nathanfaucett/is_equal@^0.0.1":
+"@nathanfaucett/is_equal@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/is_equal/-/is_equal-0.0.1.tgz#575a40dad42a9d6aac9a83a0da47d6f7270f149c"
 
@@ -279,7 +274,7 @@
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/is_undefined/-/is_undefined-0.0.1.tgz#76bbed2e9c7264e2bef72220ec5fb9aeebd9464b"
 
-"@nathanfaucett/iterator@^0.0.2":
+"@nathanfaucett/iterator@0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/iterator/-/iterator-0.0.2.tgz#db08b7a69e7889db9667ada045117efa4b4632c9"
   dependencies:
@@ -316,9 +311,9 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@nathanfaucett/now/-/now-0.0.3.tgz#7c214346bdbef94ca73921acc9c064ca3dbc2c1c"
 
-"@nathanfaucett/number-hash_code@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/number-hash_code/-/number-hash_code-0.0.1.tgz#0911d9b6e25692a052e3d2c098ee81572f988bc4"
+"@nathanfaucett/number-hash_code@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/number-hash_code/-/number-hash_code-0.0.2.tgz#4fb4d029a4542ab6719b19470e00e5e1dc98508f"
 
 "@nathanfaucett/object-for_each@^0.0.2":
   version "0.0.2"
@@ -332,21 +327,26 @@
   dependencies:
     "@nathanfaucett/apply" "^0.0.1"
 
-"@nathanfaucett/string-hash_code@^0.0.1":
+"@nathanfaucett/path_utils@^0.0.1":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/string-hash_code/-/string-hash_code-0.0.1.tgz#c67fb1fe613c3e85d8cdcef488d42fc5b24e990c"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/path_utils/-/path_utils-0.0.1.tgz#123e6c62def682d7c3bfb8c2f8fa79f40cb8418c"
+
+"@nathanfaucett/string-hash_code@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/string-hash_code/-/string-hash_code-0.0.2.tgz#d48aa0235677573e128a44392f3f4b1f5113586a"
   dependencies:
     "@nathanfaucett/is_undefined" "^0.0.1"
 
-"@nathanfaucett/task@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@nathanfaucett/task/-/task-0.0.8.tgz#d029189b270f2e179c9420c787c9d91183f4d7f2"
+"@nathanfaucett/task@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@nathanfaucett/task/-/task-0.0.10.tgz#8c40037671f17b2b5da03ac3679f0a218931b502"
   dependencies:
     "@nathanfaucett/apply" "^0.0.1"
     "@nathanfaucett/array-for_each" "^0.0.1"
     "@nathanfaucett/async_done" "^0.0.1"
     "@nathanfaucett/empty_function" "^0.0.1"
     "@nathanfaucett/event_emitter" "^0.0.3"
+    "@nathanfaucett/file_path" "^0.0.4"
     "@nathanfaucett/has" "^0.0.2"
     "@nathanfaucett/is_array" "^0.0.1"
     "@nathanfaucett/is_function" "^0.0.1"
@@ -356,6 +356,7 @@
     "@nathanfaucett/object-for_each" "^0.0.2"
     "@nathanfaucett/once" "^0.0.1"
     chokidar "^1.6.1"
+    colors "^1.1.2"
     vinyl-fs "^2.4.4"
 
 "@nathanfaucett/to_string@0.0.1":
@@ -979,6 +980,10 @@ code-point-at@^1.0.0:
 colors@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/colors/-/colors-0.6.2.tgz#2423fe6678ac0c5dae8852e5d0e5be08c997abcc"
+
+colors@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
 combine-source-map@~0.7.1:
   version "0.7.2"

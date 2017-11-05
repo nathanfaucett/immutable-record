@@ -35,10 +35,6 @@ function Record(defaultProps, name) {
 
 
     function RecordType(value) {
-        if (!(this instanceof RecordType)) {
-            throw new Error(defaultName + "() must be called with new");
-        }
-
         if (value === LOCAL_INTERNAL_CREATE) {
             return this;
         } else {
@@ -199,8 +195,8 @@ function Record_iterator(_this) {
 }
 
 function Record_iteratorReverse(_this) {
-    var map = _this._map;
-    keys = _this._keys,
+    var map = _this._map,
+        keys = _this._keys,
         index = keys.length;
 
     return new RecordIterator(function next() {
